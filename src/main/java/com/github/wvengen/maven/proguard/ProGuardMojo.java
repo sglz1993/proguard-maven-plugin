@@ -37,6 +37,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
+import lombok.SneakyThrows;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.maven.archiver.MavenArchiveConfiguration;
@@ -66,7 +67,6 @@ import org.codehaus.plexus.archiver.jar.JarArchiver;
  * @requiresDependencyResolution compile
  * @threadSafe
  */
-
 public class ProGuardMojo extends AbstractMojo {
 
 	/**
@@ -412,6 +412,7 @@ public class ProGuardMojo extends AbstractMojo {
 		return appendClassifier && ((attachArtifactClassifier != null) && (attachArtifactClassifier.length() > 0));
 	}
 
+	@SneakyThrows
 	@Override
 	public void execute() throws MojoExecutionException, MojoFailureException {
 
